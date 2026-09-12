@@ -215,29 +215,29 @@ export function AdminDashboard() {
   }, [invoices, salaries])
 
   const cards = [
-    { label: 'Total Students', value: String(enrolledCount) },
-    { label: `Collected — ${formatMonth(currentMonth)}`, value: formatCurrency(collectedThisMonth) },
-    { label: `Due — ${formatMonth(currentMonth)}`, value: formatCurrency(dueThisMonth) },
-    { label: 'Attendance This Month', value: `${overallAttendancePercent}%` },
+    { label: 'إجمالي الطلبة', value: String(enrolledCount) },
+    { label: `المقبوضات — ${formatMonth(currentMonth)}`, value: formatCurrency(collectedThisMonth) },
+    { label: `المستحقات — ${formatMonth(currentMonth)}`, value: formatCurrency(dueThisMonth) },
+    { label: 'نسبة حضور الشهر', value: `${overallAttendancePercent}%` },
   ]
 
   const financeCards = [
     {
-      label: 'Net Profit',
+      label: 'صافي النتيجة',
       value: formatCurrency(profitThisMonth),
       color: profitThisMonth >= 0 ? STATUS.good : STATUS.critical,
     },
-    { label: 'Salary Expense', value: formatCurrency(salaryExpenseThisMonth), color: CHART_INK.primary },
-    { label: 'Salaries To Be Paid', value: formatCurrency(salaryTotals.pending), color: STATUS.warning },
-    { label: 'New Admissions This Month', value: String(newAdmissionsThisMonth), color: CATEGORICAL[2] },
+    { label: 'مصروف الرواتب', value: formatCurrency(salaryExpenseThisMonth), color: CHART_INK.primary },
+    { label: 'رواتب قيد الصرف', value: formatCurrency(salaryTotals.pending), color: STATUS.warning },
+    { label: 'القبولات الجديدة هذا الشهر', value: String(newAdmissionsThisMonth), color: CATEGORICAL[2] },
   ]
 
   if (loading) {
-    return <p className="text-slate-400 dark:text-slate-500">Loading dashboard...</p>
+    return <div dir="rtl" className="grid min-h-[50vh] place-items-center rounded-3xl border border-[#e5e1d8] bg-white"><div className="text-center"><div className="mx-auto mb-4 size-10 animate-spin rounded-full border-2 border-[#d8c29a] border-t-[#242321]" /><p className="text-sm font-semibold text-[#77736b]">جارٍ تجهيز لوحة المدرسة...</p></div></div>
   }
 
   return (
-    <div className="space-y-6">
+    <div dir="rtl" className="dashboard-command-center space-y-7">
       <div dir="rtl">
         <p className="text-xs font-bold tracking-[0.16em] text-brand-700 dark:text-gold-400">مدرسة الملك حسين بن طلال</p>
         <h1 className="mt-2 text-2xl font-black text-slate-900 dark:text-slate-50">لوحة المتابعة المدرسية</h1>
@@ -256,7 +256,7 @@ export function AdminDashboard() {
       <div>
         <div className="mb-2 flex items-baseline justify-between">
           <p className="text-sm font-semibold text-slate-800 dark:text-slate-100">
-            Financials — {formatMonth(currentMonth)}
+            الملخص المالي — {formatMonth(currentMonth)}
           </p>
           <p className="text-xs text-slate-400 dark:text-slate-500">
             Based on fees collected and salary expense — the only revenue/cost this system tracks
@@ -276,7 +276,7 @@ export function AdminDashboard() {
 
       {students.length === 0 ? (
         <EmptyState
-          title="No data yet"
+          title="لا توجد بيانات بعد"
           description="Charts will populate once students, fees, attendance, and exam results are recorded."
         />
       ) : (
@@ -313,10 +313,10 @@ export function AdminDashboard() {
 
           <div className="flex flex-wrap items-center gap-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-4">
             <span className="text-xs font-medium uppercase tracking-wide text-slate-400 dark:text-slate-500">
-              Filter charts below
+              تصفية المؤشرات
             </span>
             <Select value={chartClassFilter} onChange={(e) => setChartClassFilter(e.target.value)} className="max-w-[180px]">
-              <option value="all">All classes</option>
+              <option value="all">جميع الشعب</option>
               {classes.map((c) => (
                 <option key={c.id} value={c.id}>
                   {c.name}
@@ -324,7 +324,7 @@ export function AdminDashboard() {
               ))}
             </Select>
             <Select value={chartCategoryFilter} onChange={(e) => setChartCategoryFilter(e.target.value)} className="max-w-[180px]">
-              <option value="all">All categories</option>
+              <option value="all">جميع التصنيفات</option>
               {categories.map((cat) => (
                 <option key={cat} value={cat}>
                   {cat}
@@ -336,7 +336,7 @@ export function AdminDashboard() {
           <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-4">
             <p className="mb-3 text-sm font-semibold text-slate-800 dark:text-slate-100">Performance by Class</p>
             {performanceByClass.length === 0 ? (
-              <p className="py-16 text-center text-sm text-slate-400 dark:text-slate-500">No exam results recorded yet.</p>
+              <p className="py-16 text-center text-sm text-slate-400 dark:text-slate-500">لم تُرصد نتائج اختبارات بعد.</p>
             ) : (
               <ResponsiveContainer width="100%" height={260}>
                 <BarChart data={performanceByClass}>
@@ -356,7 +356,7 @@ export function AdminDashboard() {
             <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-4">
               <p className="mb-3 text-sm font-semibold text-slate-800 dark:text-slate-100">Attendance % by Class (this month)</p>
               {attendanceByClass.length === 0 ? (
-                <p className="py-16 text-center text-sm text-slate-400 dark:text-slate-500">No attendance recorded this month.</p>
+                <p className="py-16 text-center text-sm text-slate-400 dark:text-slate-500">لم يُرصد حضور هذا الشهر.</p>
               ) : (
                 <ResponsiveContainer width="100%" height={220}>
                   <BarChart data={attendanceByClass}>
@@ -374,7 +374,7 @@ export function AdminDashboard() {
               <p className="mb-1 text-sm font-semibold text-slate-800 dark:text-slate-100">Results by Exam Type</p>
               <p className="mb-3 text-xs text-slate-400 dark:text-slate-500">Combined across every subject and class (Mid 1, Mid 2, Final, etc.)</p>
               {performanceByExamType.length === 0 ? (
-                <p className="py-16 text-center text-sm text-slate-400 dark:text-slate-500">No exam results recorded yet.</p>
+                <p className="py-16 text-center text-sm text-slate-400 dark:text-slate-500">لم تُرصد نتائج اختبارات بعد.</p>
               ) : (
                 <>
                   <ResponsiveContainer width="100%" height={200}>

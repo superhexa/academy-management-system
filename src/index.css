@@ -47,6 +47,21 @@ textarea {
   }
 }
 
+.dashboard-command-center > div:not(:first-child) {
+  border-radius: 1.25rem;
+}
+
+.dashboard-command-center > div:not(:first-child) > div,
+.dashboard-command-center > div:not(:first-child) > section {
+  border-color: #e5e1d8;
+  box-shadow: 0 16px 40px rgba(36, 35, 33, 0.04);
+}
+
+.dashboard-command-center select {
+  border-color: #dedbd3;
+  background: #ffffff;
+}
+
 /* Recharts renders its Tooltip as a plain div with inline styles, so it can't
    pick up Tailwind's dark: classes directly — these CSS variables let the
    tooltip (and the bar/line hover highlight) still follow the app's theme. */
