@@ -30,6 +30,7 @@ import { StudentCardsPage } from '@/pages/admin/StudentCardsPage'
 import { ScannerPage } from '@/pages/attendance/ScannerPage'
 import { MonthlyReportsPage } from '@/pages/admin/MonthlyReportsPage'
 import { SettingsPage } from '@/pages/shared/SettingsPage'
+import { LandingPage } from '@/pages/LandingPage'
 
 export default function App() {
   return (
@@ -37,6 +38,7 @@ export default function App() {
       <AuthProvider>
         <ToastProvider>
           <Routes>
+            <Route path="/" element={<LandingPage />} />
             <Route path="/login" element={<Login />} />
             <Route path="/reset-password" element={<ResetPassword />} />
 

@@ -48,7 +48,7 @@ export function TopBar({ onMenuClick }: { onMenuClick: () => void }) {
       <div className="flex min-w-0 items-center gap-2">
         <button
           onClick={onMenuClick}
-          aria-label="Open menu"
+          aria-label="فتح القائمة"
           className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-brand-700 hover:bg-brand-50 dark:text-cream-100 dark:hover:bg-slate-700 lg:hidden"
         >
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
@@ -57,15 +57,15 @@ export function TopBar({ onMenuClick }: { onMenuClick: () => void }) {
             <line x1="3" y1="18" x2="21" y2="18" />
           </svg>
         </button>
-        <img src={logoUrl} alt="Maktab - The Educational Institute crest" className="h-8 w-auto shrink-0" />
+        <img src={logoUrl} alt="شعار مدرسة الملك حسين بن طلال" className="h-8 w-auto shrink-0" />
         <span className="hidden truncate text-sm font-semibold text-brand-800 dark:text-cream-100 sm:inline">
-          Maktab - The Educational Institute
+          مدرسة الملك حسين بن طلال الثانوية الشاملة للبنين
         </span>
       </div>
       <div className="flex shrink-0 items-center gap-2 sm:gap-3">
         <button
           onClick={openEditName}
-          title="Edit your name"
+title="تعديل الاسم"
           className="hidden rounded-md px-1.5 py-1 text-sm text-brand-800 transition-colors hover:bg-brand-50 dark:text-cream-100 dark:hover:bg-slate-700 sm:inline"
         >
           {profile?.full_name}
@@ -75,23 +75,23 @@ export function TopBar({ onMenuClick }: { onMenuClick: () => void }) {
           onClick={() => signOut()}
           className="rounded-lg border border-brand-300 px-2.5 py-1.5 text-sm font-medium text-brand-700 transition-colors hover:bg-brand-50 dark:border-slate-600 dark:text-cream-100 dark:hover:bg-slate-700 sm:px-3"
         >
-          Sign out
+          تسجيل الخروج
         </button>
       </div>
 
       {editingName && (
-        <Modal title="Edit your name" onClose={() => setEditingName(false)}>
+        <Modal title="تعديل الاسم" onClose={() => setEditingName(false)}>
           <div className="space-y-3">
-            <Field label="Full name">
+            <Field label="الاسم الكامل">
               <Input value={nameDraft} onChange={(e) => setNameDraft(e.target.value)} autoFocus />
             </Field>
             {nameError && <p className="text-sm text-red-600 dark:text-red-400">{nameError}</p>}
             <div className="flex justify-end gap-2 pt-2">
               <Button variant="secondary" onClick={() => setEditingName(false)}>
-                Cancel
+                إلغاء
               </Button>
               <Button onClick={saveName} disabled={savingName}>
-                {savingName ? 'Saving...' : 'Save'}
+                {savingName ? 'جارٍ الحفظ...' : 'حفظ'}
               </Button>
             </div>
           </div>
