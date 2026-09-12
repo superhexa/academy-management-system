@@ -34,9 +34,9 @@ export function AdminLayout() {
   return (
     <div dir="rtl" lang="ar" className="flex min-h-dvh bg-cream-50">
       <Sidebar title="Admin" items={navItems} isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
-      <div className="flex min-w-0 flex-1 flex-col">
+      <div className="flex min-w-0 flex-1 flex-col bg-[#fbfaf7]">
         <TopBar onMenuClick={() => setSidebarOpen(true)} />
-        <main className="flex-1 overflow-x-hidden bg-cream-50 p-4 dark:bg-slate-900 sm:p-6">
+        <main className="flex-1 overflow-x-hidden bg-[#fbfaf7] p-4 sm:p-6">
           <Outlet />
         </main>
       </div>

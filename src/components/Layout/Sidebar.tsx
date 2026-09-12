@@ -38,22 +38,22 @@ export function Sidebar({
 
           Below `lg` it stays a fixed overlay drawer, unchanged. */}
       <aside
-        className={`no-print fixed inset-y-0 left-0 z-50 flex w-72 max-w-[85vw] shrink-0 flex-col bg-gradient-to-b from-brand-800 to-brand-900 shadow-lg transition-transform duration-200 ease-in-out lg:sticky lg:bottom-auto lg:top-0 lg:z-auto lg:h-dvh lg:w-60 lg:max-w-none lg:translate-x-0 lg:self-start lg:shadow-none ${
+        className={`no-print fixed inset-y-0 left-0 z-50 flex w-72 max-w-[85vw] shrink-0 flex-col border-r border-[#e5e1d8] bg-[#fbfaf7] shadow-lg transition-transform duration-200 ease-in-out lg:sticky lg:bottom-auto lg:top-0 lg:z-auto lg:h-dvh lg:w-60 lg:max-w-none lg:translate-x-0 lg:self-start lg:shadow-none ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
         style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}
       >
-        <div className="flex items-center gap-3 border-b border-gold-400/20 px-5 py-5">
+        <div className="flex items-center gap-3 border-b border-[#e5e1d8] px-5 py-5">
           <img src={logoUrl} alt="شعار مدرسة الملك حسين بن طلال" className="h-10 w-auto shrink-0" />
           <div className="min-w-0 flex-1 text-right">
-            <p className="text-[11px] font-semibold text-gold-400">مدرسة الملك حسين بن طلال</p>
-            <p className="text-sm font-semibold text-cream-50">الثانوية الشاملة للبنين</p>
-            <p className="mt-1 text-xs font-medium text-cream-200/70">لوحة {title === 'Admin' ? 'الإدارة' : 'المعلم'}</p>
+            <p className="text-[11px] font-semibold text-[#b18a4b]">مدرسة الملك حسين بن طلال</p>
+            <p className="text-sm font-semibold text-[#242321]">الثانوية الشاملة للبنين</p>
+            <p className="mt-1 text-xs font-medium text-[#77736b]">لوحة {title === 'Admin' ? 'الإدارة' : 'المعلم'}</p>
           </div>
           <button
             onClick={onClose}
             aria-label="Close menu"
-            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-cream-200/80 hover:bg-white/10 hover:text-cream-50 lg:hidden"
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-[#77736b] hover:bg-white/10 hover:text-[#242321] lg:hidden"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
               <line x1="18" y1="6" x2="6" y2="18" />
@@ -71,8 +71,8 @@ export function Sidebar({
               className={({ isActive }) =>
                 `block rounded-lg border-l-4 px-3 py-2.5 text-sm font-medium transition-colors duration-150 ${
                   isActive
-                    ? 'border-gold-400 bg-white/10 text-cream-50'
-                    : 'border-transparent text-cream-200/80 hover:border-gold-400/50 hover:bg-white/5 hover:text-cream-50'
+                    ? 'border-[#b18a4b] bg-white text-[#242321] shadow-sm'
+                    : 'border-transparent text-[#77736b] hover:border-[#d8c29a] hover:bg-white hover:text-[#242321]'
                 }`
               }
             >
@@ -80,7 +80,7 @@ export function Sidebar({
             </NavLink>
           ))}
         </nav>
-        <div className="border-t border-gold-400/20 px-5 py-3 text-center text-[11px] leading-5 text-cream-200/60">
+        <div className="border-t border-[#e5e1d8] px-5 py-3 text-center text-[11px] leading-5 text-[#9a958b]">
           وزارة التربية والتعليم الأردنية
           <br />
           العام الدراسي 2026/2027
