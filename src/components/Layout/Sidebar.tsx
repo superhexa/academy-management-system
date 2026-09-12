@@ -44,11 +44,11 @@ export function Sidebar({
         style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}
       >
         <div className="flex items-center gap-3 border-b border-gold-400/20 px-5 py-5">
-          <img src={logoUrl} alt="Maktab - The Educational Institute crest" className="h-10 w-auto shrink-0" />
-          <div className="min-w-0 flex-1">
-            <p className="text-[11px] font-semibold uppercase tracking-widest text-gold-400">Maktab</p>
-            <p className="text-sm font-semibold text-cream-50">The Educational Institute</p>
-            <p className="mt-1 text-xs font-medium text-cream-200/70">{title} Panel</p>
+          <img src={logoUrl} alt="شعار مدرسة الملك حسين بن طلال" className="h-10 w-auto shrink-0" />
+          <div className="min-w-0 flex-1 text-right">
+            <p className="text-[11px] font-semibold text-gold-400">مدرسة الملك حسين بن طلال</p>
+            <p className="text-sm font-semibold text-cream-50">الثانوية الشاملة للبنين</p>
+            <p className="mt-1 text-xs font-medium text-cream-200/70">لوحة {title === 'Admin' ? 'الإدارة' : 'المعلم'}</p>
           </div>
           <button
             onClick={onClose}
@@ -80,8 +80,10 @@ export function Sidebar({
             </NavLink>
           ))}
         </nav>
-        <div className="border-t border-gold-400/20 px-5 py-3 text-[11px] text-cream-200/50">
-          Maktab - The Educational Institute
+        <div className="border-t border-gold-400/20 px-5 py-3 text-center text-[11px] leading-5 text-cream-200/60">
+          وزارة التربية والتعليم الأردنية
+          <br />
+          العام الدراسي 2026/2027
         </div>
       </aside>
     </>
