@@ -52,7 +52,7 @@ export function Sidebar({
           </div>
           <button
             onClick={onClose}
-            aria-label="Close menu"
+            aria-label="إغلاق القائمة"
             className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-[#77736b] hover:bg-white/10 hover:text-[#242321] lg:hidden"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">

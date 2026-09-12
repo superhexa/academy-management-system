@@ -73,9 +73,9 @@ export function CourseBreakdownOverviewPage() {
   const openSubject = openBreakdown ? subjectById.get(openBreakdown.subject_id) : undefined
 
   return (
-    <div className="space-y-4">
+    <div dir="rtl" lang="ar" className="admin-page space-y-5">
       <div>
-        <h1 className="text-lg font-semibold text-slate-900 dark:text-slate-50">Course Breakdown</h1>
+        <h1 className="text-lg font-semibold text-slate-900 dark:text-slate-50">الخطة الدراسية</h1>
         <p className="text-sm text-slate-500 dark:text-slate-400">
           Every teacher's pacing plan, by subject and class.
         </p>
@@ -172,7 +172,7 @@ export function CourseBreakdownOverviewPage() {
 
       {openBreakdown && (
         <Modal
-          title={`${openSubject?.name ?? 'Subject'} — Course Breakdown`}
+          title={`${openSubject?.name ?? 'Subject'} — الخطة الدراسية`}
           onClose={() => setOpenId(null)}
           wide
         >

@@ -42,14 +42,14 @@ export function TopBar({ onMenuClick }: { onMenuClick: () => void }) {
 
   return (
     <header
-      className="no-print flex h-14 shrink-0 items-center justify-between border-b-2 border-gold-400/40 bg-cream-50 px-3 dark:border-gold-500/20 dark:bg-slate-800 sm:px-6"
+      className="no-print flex h-16 shrink-0 items-center justify-between border-b border-[#e6e4de] bg-white/90 px-3 shadow-[0_4px_24px_rgba(36,35,33,0.03)] backdrop-blur-xl sm:px-6"
       style={{ paddingTop: 'env(safe-area-inset-top)' }}
     >
       <div className="flex min-w-0 items-center gap-2">
         <button
           onClick={onMenuClick}
           aria-label="فتح القائمة"
-          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-brand-700 hover:bg-brand-50 dark:text-cream-100 dark:hover:bg-slate-700 lg:hidden"
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-[#77736b] hover:bg-[#f5f2eb] lg:hidden"
         >
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
             <line x1="3" y1="6" x2="21" y2="6" />

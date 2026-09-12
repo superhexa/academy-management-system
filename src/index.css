@@ -62,6 +62,66 @@ textarea {
   background: #ffffff;
 }
 
+/* Unified contemporary workspace across every admin route. */
+.admin-workspace main > div {
+  max-width: 1600px;
+  margin-inline: auto;
+}
+
+.admin-workspace main h1 {
+  letter-spacing: -0.045em;
+  font-weight: 800;
+}
+
+.admin-workspace main > div > div:first-child {
+  border-color: #e5e3dd;
+}
+
+.admin-workspace main [class*="rounded-lg"],
+.admin-workspace main [class*="rounded-xl"],
+.admin-workspace main [class*="rounded-2xl"] {
+  border-color: #e5e3dd;
+}
+
+.admin-workspace main table {
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+}
+
+.admin-workspace main thead {
+  background: #f7f6f2;
+}
+
+.admin-workspace main th {
+  color: #77736b;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.admin-workspace main tbody tr {
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.admin-workspace main tbody tr:hover {
+  background: #faf9f6;
+}
+
+.admin-workspace main input,
+.admin-workspace main select,
+.admin-workspace main textarea {
+  border-color: #dedbd3;
+  border-radius: 0.75rem;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(36, 35, 33, 0.025);
+}
+
+@media (max-width: 640px) {
+  .admin-workspace main h1 { font-size: 1.35rem; }
+  .admin-workspace main { padding-inline: 0.75rem; }
+}
+
 /* Recharts renders its Tooltip as a plain div with inline styles, so it can't
    pick up Tailwind's dark: classes directly — these CSS variables let the
    tooltip (and the bar/line hover highlight) still follow the app's theme. */

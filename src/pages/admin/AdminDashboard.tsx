@@ -60,7 +60,7 @@ export function AdminDashboard() {
   if (loading) return <div dir="rtl" className="grid min-h-[60vh] place-items-center rounded-[2rem] bg-white"><div className="text-center"><div className="mx-auto mb-4 size-10 animate-spin rounded-full border-2 border-[#d9c39c] border-t-[#242321]" /><p className="font-semibold text-[#77736b]">جارٍ تجهيز مركز العمليات...</p></div></div>
 
   return (
-    <div dir="rtl" lang="ar" className="mx-auto flex max-w-[1600px] flex-col gap-7 pb-8">
+    <div dir="rtl" lang="ar" className="admin-page mx-auto flex max-w-[1600px] flex-col gap-7 pb-8">
       <header className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
         <div>
           <p className="mb-3 text-xs font-bold tracking-[0.2em] text-[#b18a4b]">مركز العمليات المدرسية / ٢٠٢٦ — ٢٠٢٧</p>

@@ -255,7 +255,7 @@ export function StudentsPage() {
   }
 
   return (
-    <div className="space-y-4">
+    <div dir="rtl" lang="ar" className="admin-page space-y-5">
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-lg font-semibold text-slate-900 dark:text-slate-50">Students</h1>
