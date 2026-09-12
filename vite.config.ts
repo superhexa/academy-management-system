@@ -27,5 +27,7 @@ export default defineConfig({
   },
   server: {
     port: 5173,
+    // Vercel preview URLs use changing *.vercel.run hostnames.
+    allowedHosts: ['.vercel.run'],
   },
 })
