@@ -4,14 +4,14 @@ import { Sidebar, type NavItem } from './Sidebar'
 import { TopBar } from './TopBar'
 
 const navItems: NavItem[] = [
-  { label: 'Dashboard', to: '/teacher', end: true },
-  { label: 'My Students', to: '/teacher/students' },
-  { label: 'Timetable', to: '/teacher/timetable' },
-  { label: 'Attendance', to: '/teacher/attendance' },
-  { label: 'Question Bank', to: '/teacher/questions' },
-  { label: 'Exams & Results', to: '/teacher/exams' },
-  { label: 'Course Breakdown', to: '/teacher/course-breakdown' },
-  { label: 'Settings', to: '/teacher/settings' },
+  { label: 'لوحة التحكم', to: '/teacher', end: true },
+  { label: 'طلبتي', to: '/teacher/students' },
+  { label: 'الجدول المدرسي', to: '/teacher/timetable' },
+  { label: 'الحضور والغياب', to: '/teacher/attendance' },
+  { label: 'بنك الأسئلة', to: '/teacher/questions' },
+  { label: 'الاختبارات والنتائج', to: '/teacher/exams' },
+  { label: 'الخطة الدراسية', to: '/teacher/course-breakdown' },
+  { label: 'الإعدادات', to: '/teacher/settings' },
 ]
 
 export function TeacherLayout() {
@@ -26,7 +26,7 @@ export function TeacherLayout() {
   }, [sidebarOpen])
 
   return (
-    <div className="flex min-h-dvh">
+    <div dir="rtl" lang="ar" className="flex min-h-dvh bg-cream-50">
       <Sidebar title="Teacher" items={navItems} isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
       <div className="flex min-w-0 flex-1 flex-col">
         <TopBar onMenuClick={() => setSidebarOpen(true)} />

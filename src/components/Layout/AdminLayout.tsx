@@ -32,7 +32,7 @@ export function AdminLayout() {
   }, [sidebarOpen])
 
   return (
-    <div className="flex min-h-dvh">
+    <div dir="rtl" lang="ar" className="flex min-h-dvh bg-cream-50">
       <Sidebar title="Admin" items={navItems} isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
       <div className="flex min-w-0 flex-1 flex-col">
         <TopBar onMenuClick={() => setSidebarOpen(true)} />

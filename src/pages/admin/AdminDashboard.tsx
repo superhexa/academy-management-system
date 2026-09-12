@@ -238,9 +238,10 @@ export function AdminDashboard() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="text-lg font-semibold text-slate-900 dark:text-slate-50">Admin Dashboard</h1>
-        <p className="text-sm text-slate-500 dark:text-slate-400">Overview of the academy at a glance.</p>
+      <div dir="rtl">
+        <p className="text-xs font-bold tracking-[0.16em] text-brand-700 dark:text-gold-400">مدرسة الملك حسين بن طلال</p>
+        <h1 className="mt-2 text-2xl font-black text-slate-900 dark:text-slate-50">لوحة المتابعة المدرسية</h1>
+        <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">نظرة شاملة على سير العملية التعليمية والإدارية اليوم.</p>
       </div>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
