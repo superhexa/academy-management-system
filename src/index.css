@@ -6,21 +6,21 @@
 
 :root {
   font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif;
-  color: #201c1d;
-  background: #f8f5ef;
+  color: #242321;
+  background: #fbfaf7;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 }
 
 html {
-  background: #f8f5ef;
+  background: #fbfaf7;
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
   min-width: 320px;
-  background: #f8f5ef;
+  background: #fbfaf7;
 }
 
 button,
@@ -32,8 +32,8 @@ textarea {
 }
 
 ::selection {
-  background: #d4a64a;
-  color: #4d1321;
+  background: #d8c29a;
+  color: #242321;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -51,17 +51,17 @@ textarea {
    pick up Tailwind's dark: classes directly — these CSS variables let the
    tooltip (and the bar/line hover highlight) still follow the app's theme. */
 :root {
-  --tooltip-bg: #fdfbf5;
-  --tooltip-border: #e6a7b0;
-  --tooltip-text: #241713;
-  --tooltip-cursor: rgba(147, 46, 62, 0.08);
+  --tooltip-bg: #ffffff;
+  --tooltip-border: #d8c29a;
+  --tooltip-text: #242321;
+  --tooltip-cursor: rgba(177, 138, 75, 0.08);
 }
 
 .dark {
   --tooltip-bg: #1e293b;
   --tooltip-border: #475569;
   --tooltip-text: #f1f5f9;
-  --tooltip-cursor: rgba(217, 144, 154, 0.12);
+  --tooltip-cursor: rgba(177, 138, 75, 0.12);
 }
 
 /* The print-only copy of the exam paper (see ExamPaperPrintTarget). */
