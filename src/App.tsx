@@ -14,7 +14,6 @@ import { StudentsPage } from '@/pages/admin/StudentsPage'
 import { TeachersPage } from '@/pages/admin/TeachersPage'
 import { ClassesSubjectsPage } from '@/pages/admin/ClassesSubjectsPage'
 import { AdminTimetablePage } from '@/pages/admin/AdminTimetablePage'
-import { FeesPage } from '@/pages/admin/FeesPage'
 import { TeacherTimetablePage } from '@/pages/teacher/TeacherTimetablePage'
 import { TeacherStudentsPage } from '@/pages/teacher/TeacherStudentsPage'
 import { TeacherStudentDetailPage } from '@/pages/teacher/TeacherStudentDetailPage'
@@ -22,8 +21,6 @@ import { AttendancePage } from '@/pages/shared/AttendancePage'
 import { QuestionBankPage } from '@/pages/shared/QuestionBankPage'
 import { ExamsPage } from '@/pages/shared/ExamsPage'
 import { ExamDetailPage } from '@/pages/shared/ExamDetailPage'
-import { FeeChallanPage } from '@/pages/admin/FeeChallanPage'
-import { SalariesPage } from '@/pages/admin/SalariesPage'
 import { CourseBreakdownOverviewPage } from '@/pages/admin/CourseBreakdownOverviewPage'
 import { TeacherCourseBreakdownPage } from '@/pages/teacher/TeacherCourseBreakdownPage'
 import { StudentCardsPage } from '@/pages/admin/StudentCardsPage'
@@ -52,9 +49,6 @@ export default function App() {
                 <Route path="timetable" element={<AdminTimetablePage />} />
                 <Route path="attendance" element={<AttendancePage />} />
                 <Route path="scanner" element={<ScannerPage />} />
-                <Route path="fees" element={<FeesPage />} />
-                <Route path="fee-challans" element={<FeeChallanPage />} />
-                <Route path="salaries" element={<SalariesPage />} />
                 <Route path="monthly-reports" element={<MonthlyReportsPage />} />
                 <Route path="settings" element={<SettingsPage />} />
                 <Route path="course-breakdown" element={<CourseBreakdownOverviewPage />} />
