@@ -27,5 +27,9 @@ export default defineConfig({
   },
   server: {
     port: 5173,
+    allowedHosts: [
+      'sb-3lo6whjuecog.vercel.run',
+      'academy-management-system-n4du.vercel.app',
+    ],
   },
 })
