@@ -17,7 +17,7 @@ export class AppErrorBoundary extends Component<Props, State> {
   render() {
     if (!this.state.hasError) return this.props.children
     return (
-      <main dir="rtl" className="flex min-h-screen items-center justify-center bg-[#f8f5ef] p-6 text-[#201c1d]">
+      <main dir="rtl" lang="ar" className="flex min-h-screen items-center justify-center bg-[#f8f5ef] p-6 text-[#201c1d]">
         <section className="w-full max-w-lg rounded-3xl border border-[#ded7ca] bg-[#fffdf9] p-8 text-center shadow-xl">
           <p className="text-sm font-bold text-[#8b5d29]">بوابة المدرسة</p>
           <h1 className="mt-3 text-2xl font-black text-[#4d1321]">حدث خطأ غير متوقع</h1>

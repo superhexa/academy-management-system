@@ -13,8 +13,12 @@ export function LandingPage() {
     <main dir="rtl" lang="ar" className="min-h-screen overflow-hidden bg-[#f8f5ef] font-['IBM_Plex_Sans_Arabic'] text-[#201c1d]">
       <section className="relative border-b border-[#ded7ca] bg-[#4d1321] text-[#fffaf3]">
         <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(135deg,transparent_45%,#d4a64a_45%,#d4a64a_48%,transparent_48%)] [background-size:42px_42px]" />
-        <nav className="relative mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-10">
-          <Link to="/login" className="rounded-full border border-[#e4c27a] px-5 py-2 text-sm font-bold text-[#fffaf3] transition hover:bg-[#e4c27a] hover:text-[#4d1321]">دخول النظام</Link>
+        <nav aria-label="التنقل الرئيسي" className="relative mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-10">
+          <div className="flex items-center gap-5 text-sm font-semibold text-[#eadfd4]">
+            <a href="#about" className="hidden transition hover:text-[#e4c27a] sm:block">عن المدرسة</a>
+            <a href="#services" className="hidden transition hover:text-[#e4c27a] sm:block">الخدمات</a>
+            <Link to="/login" className="rounded-full border border-[#e4c27a] px-5 py-2 text-sm font-bold text-[#fffaf3] transition hover:bg-[#e4c27a] hover:text-[#4d1321]">دخول النظام</Link>
+          </div>
           <div className="flex items-center gap-3 text-right">
             <div className="flex size-12 items-center justify-center rounded-2xl bg-[#d4a64a] text-xl font-black text-[#4d1321]">م</div>
             <div>
@@ -45,9 +49,9 @@ export function LandingPage() {
         </div>
       </section>
 
-      <section id="about" className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
-        <div className="grid gap-12 lg:grid-cols-[.8fr_1.2fr] lg:items-end"><div><p className="text-sm font-bold tracking-[0.18em] text-[#8b5d29]">مدرستنا</p><h2 className="mt-3 text-4xl font-black leading-tight text-[#4d1321] sm:text-5xl">بيئة تعليمية<br />تدفعك للأمام</h2></div><p className="max-w-2xl text-lg leading-9 text-[#665d5d]">في مدرسة الملك حسين بن طلال الثانوية الشاملة للبنين نؤمن أن المدرسة ليست مبنى، بل مجتمع يتشارك فيه الطالب والمعلم والأسرة مسؤولية النجاح. نستخدم التقنية لخدمة الإنسان، ونضع الانضباط والفضول والاحترام في قلب التجربة التعليمية.</p></div>
-        <div className="mt-14 grid gap-5 md:grid-cols-3">{services.map((service) => <article key={service.number} className="group rounded-2xl border border-[#ded7ca] bg-[#fffdf9] p-7 transition hover:-translate-y-2 hover:border-[#d4a64a] hover:shadow-xl hover:shadow-[#4d1321]/10"><span className="font-mono text-sm font-bold text-[#b77880]">{service.number}</span><h3 className="mt-12 text-2xl font-black text-[#4d1321]">{service.title}</h3><p className="mt-4 leading-7 text-[#716868]">{service.text}</p><div className="mt-8 h-1 w-12 bg-[#d4a64a] transition-all group-hover:w-20" /></article>)}</div>
+      <section id="about" aria-labelledby="about-heading" className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
+        <div className="grid gap-12 lg:grid-cols-[.8fr_1.2fr] lg:items-end"><div><p className="text-sm font-bold tracking-[0.18em] text-[#8b5d29]">مدرستنا</p><h2 id="about-heading" className="mt-3 text-4xl font-black leading-tight text-[#4d1321] sm:text-5xl">بيئة تعليمية<br />تدفعك للأمام</h2></div><p className="max-w-2xl text-lg leading-9 text-[#665d5d]">في مدرسة الملك حسين بن طلال الثانوية الشاملة للبنين نؤمن أن المدرسة ليست مبنى، بل مجتمع يتشارك فيه الطالب والمعلم والأسرة مسؤولية النجاح. نستخدم التقنية لخدمة الإنسان، ونضع الانضباط والفضول والاحترام في قلب التجربة التعليمية.</p></div>
+        <div id="services" className="mt-14 grid gap-5 md:grid-cols-3">{services.map((service) => <article key={service.number} className="group rounded-2xl border border-[#ded7ca] bg-[#fffdf9] p-7 transition hover:-translate-y-2 hover:border-[#d4a64a] hover:shadow-xl hover:shadow-[#4d1321]/10"><span className="font-mono text-sm font-bold text-[#b77880]">{service.number}</span><h3 className="mt-12 text-2xl font-black text-[#4d1321]">{service.title}</h3><p className="mt-4 leading-7 text-[#716868]">{service.text}</p><div className="mt-8 h-1 w-12 bg-[#d4a64a] transition-all group-hover:w-20" /></article>)}</div>
       </section>
 
       <section className="bg-[#eee7dc] px-6 py-20 lg:px-10"><div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:items-center"><div><p className="text-sm font-bold tracking-[0.18em] text-[#8b5d29]">قيمنا</p><h2 className="mt-3 text-4xl font-black text-[#4d1321]">ننجح معًا،<br />ونترك أثرًا.</h2></div><div className="grid gap-3">{values.map((value, index) => <div key={value} className="flex items-center gap-5 border-b border-[#d4cbbb] py-5"><span className="text-sm font-bold text-[#b77880]">0{index + 1}</span><span className="text-xl font-bold text-[#4d1321]">{value}</span></div>)}</div></div></section>

@@ -4,20 +4,20 @@ import { Sidebar, type NavItem } from './Sidebar'
 import { TopBar } from './TopBar'
 
 const navItems: NavItem[] = [
-  { label: 'Dashboard', to: '/admin', end: true },
-  { label: 'Students', to: '/admin/students' },
-  { label: 'Student Cards', to: '/admin/student-cards' },
-  { label: 'Teachers', to: '/admin/teachers' },
-  { label: 'Classes & Subjects', to: '/admin/classes' },
-  { label: 'Timetable', to: '/admin/timetable' },
-  { label: 'Attendance', to: '/admin/attendance' },
-  { label: 'Barcode Sign-in', to: '/admin/scanner' },
-  { label: 'Fees', to: '/admin/fees' },
-  { label: 'Fee Challans', to: '/admin/fee-challans' },
-  { label: 'Salaries', to: '/admin/salaries' },
-  { label: 'Monthly Reports', to: '/admin/monthly-reports' },
-  { label: 'Course Breakdown', to: '/admin/course-breakdown' },
-  { label: 'Settings', to: '/admin/settings' },
+  { label: 'لوحة التحكم', to: '/admin', end: true },
+  { label: 'الطلبة', to: '/admin/students' },
+  { label: 'بطاقات الطلبة', to: '/admin/student-cards' },
+  { label: 'المعلمون', to: '/admin/teachers' },
+  { label: 'الشعب والمواد', to: '/admin/classes' },
+  { label: 'الجدول المدرسي', to: '/admin/timetable' },
+  { label: 'الحضور والغياب', to: '/admin/attendance' },
+  { label: 'رصد الحضور بالباركود', to: '/admin/scanner' },
+  { label: 'الرسوم المدرسية', to: '/admin/fees' },
+  { label: 'سندات القبض', to: '/admin/fee-challans' },
+  { label: 'الرواتب', to: '/admin/salaries' },
+  { label: 'التقارير الشهرية', to: '/admin/monthly-reports' },
+  { label: 'الخطة الدراسية', to: '/admin/course-breakdown' },
+  { label: 'الإعدادات', to: '/admin/settings' },
 ]
 
 export function AdminLayout() {
