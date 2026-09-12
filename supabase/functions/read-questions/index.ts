@@ -284,7 +284,7 @@ function normalise(raw: RawQuestion): ExtractedQuestion | null {
 // and is left alone.
 const ROMAN = ['i', 'ii', 'iii', 'iv', 'v', 'vi', 'vii', 'viii', 'ix', 'x', 'xi', 'xii']
 const LETTERS = 'abcdefghijkl'.split('')
-const PART_LINE = /^\s*[(\[]?\s*([ivx]{1,4}|[a-l]|\d{1,2})\s*[).\]]\s*(.+)$/i
+const PART_LINE = /^\s*[([]?\s*([ivx]{1,4}|[a-l]|\d{1,2})\s*[).\]]\s*(.+)$/i
 // "using your answer from (i)" — the one case where parts truly cannot stand
 // apart, so they stay as they were printed.
 const DEPENDS_ON_EARLIER = /\b(above|previous|part\s*\(?[ivxa-l\d]|your\s+(answer|result))\b/i
