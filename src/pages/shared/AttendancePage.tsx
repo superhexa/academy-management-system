@@ -274,7 +274,7 @@ export function AttendancePage() {
       <>
 
       {tab === 'mark' ? (
-        <div className="space-y-4">
+<div dir="rtl" lang="ar" className="admin-page space-y-5">
           <div className="no-print flex flex-wrap items-end gap-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-4">
             <div>
               <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">Class</label>

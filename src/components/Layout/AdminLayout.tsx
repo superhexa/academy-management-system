@@ -29,11 +29,11 @@ export function AdminLayout() {
   }, [sidebarOpen])
 
   return (
-    <div dir="rtl" lang="ar" className="flex min-h-dvh bg-cream-50">
+    <div dir="rtl" lang="ar" className="admin-workspace flex min-h-dvh bg-[#f8f8f6]">
       <Sidebar title="Admin" items={navItems} isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
       <div className="flex min-w-0 flex-1 flex-col bg-[#fbfaf7]">
         <TopBar onMenuClick={() => setSidebarOpen(true)} />
-        <main className="flex-1 overflow-x-hidden bg-[#fbfaf7] p-4 sm:p-6">
+        <main className="flex-1 overflow-x-hidden bg-[#f8f8f6] p-3 sm:p-6 lg:p-8">
           <Outlet />
         </main>
       </div>

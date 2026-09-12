@@ -76,10 +76,10 @@ export function StudentCardsPage() {
   })
 
   return (
-    <div className="space-y-4">
+    <div dir="rtl" lang="ar" className="admin-page space-y-5">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <h1 className="text-lg font-semibold text-slate-900 dark:text-slate-50">Student Cards</h1>
+          <h1 className="text-lg font-semibold text-slate-900 dark:text-slate-50">بطاقات الطلبة</h1>
           <p className="text-sm text-slate-500 dark:text-slate-400">
             Every student has a barcode card, created automatically at admission. Print a sheet, cut, and hand out.
           </p>

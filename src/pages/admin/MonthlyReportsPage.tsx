@@ -191,10 +191,10 @@ export function MonthlyReportsPage() {
   }
 
   return (
-    <div className="space-y-4">
+    <div dir="rtl" lang="ar" className="admin-page space-y-5">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
-          <h1 className="text-lg font-semibold text-slate-900 dark:text-slate-50">Monthly Reports</h1>
+          <h1 className="text-lg font-semibold text-slate-900 dark:text-slate-50">التقارير الشهرية</h1>
           <p className="text-sm text-slate-500 dark:text-slate-400">
             Send a combined attendance + exam report email to a guardian for one month. Sending is always
             triggered by hand here — nothing goes out on a schedule.
