@@ -1,6 +1,6 @@
 import { useState, type FormEvent, type KeyboardEvent } from 'react'
 import { Navigate } from 'react-router-dom'
-import { supabase, setRememberMe } from '@/lib/supabase'
+import { supabase, setRememberMe, supabaseConfigError } from '@/lib/supabase'
 import { useAuth } from '@/context/AuthContext'
 import { homePathForRole } from '@/lib/utils'
 import { ThemeToggle } from '@/components/ThemeToggle'
@@ -89,6 +89,10 @@ export function Login() {
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault()
+    if (supabaseConfigError) {
+      setError(supabaseConfigError)
+      return
+    }
     setError(null)
     setSubmitting(true)
     setRememberMe(rememberMeChecked)
@@ -112,6 +116,10 @@ export function Login() {
 
   async function handleForgotSubmit(e: FormEvent) {
     e.preventDefault()
+    if (supabaseConfigError) {
+      setForgotError(supabaseConfigError)
+      return
+    }
     setForgotError(null)
     if (!forgotEmail.trim()) {
       setForgotError('Enter your email address first.')
@@ -198,6 +206,12 @@ export function Login() {
           </div>
           <h1 className="mb-1 text-xl font-semibold text-brand-800 dark:text-cream-50">Welcome back</h1>
           <p className="mb-6 text-sm text-slate-500 dark:text-slate-400">Sign in to continue</p>
+          {supabaseConfigError && (
+            <div role="alert" className="mb-5 rounded-lg border border-amber-300 bg-amber-50 px-3 py-3 text-sm text-amber-900 dark:border-amber-700/60 dark:bg-amber-950/40 dark:text-amber-200">
+              <p className="font-semibold">Login configuration needed</p>
+              <p className="mt-1 leading-5">{supabaseConfigError}</p>
+            </div>
+          )}
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label htmlFor="email" className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-300">

@@ -1,13 +1,17 @@
 import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
+const configuredSupabaseUrl = import.meta.env.VITE_SUPABASE_URL
+const configuredSupabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
 
-if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error(
-    'Missing VITE_SUPABASE_URL or VITE_SUPABASE_ANON_KEY. Copy .env.example to .env and fill in your Supabase project credentials.'
-  )
-}
+export const supabaseConfigError =
+  !configuredSupabaseUrl || !configuredSupabaseAnonKey
+    ? 'Supabase is not configured. Add VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY to the project environment, then restart the dev server.'
+    : null
+
+// Keep the module importable when deployment configuration is incomplete. The
+// UI can render an actionable diagnostic instead of failing before React mounts.
+const supabaseUrl = configuredSupabaseUrl ?? 'https://missing-supabase-config.invalid'
+const supabaseAnonKey = configuredSupabaseAnonKey ?? 'missing-supabase-anon-key' 
 
 // "Remember me": Supabase persists sessions in localStorage by default (i.e.
 // always remembered). To let the user opt out and have the session cleared
