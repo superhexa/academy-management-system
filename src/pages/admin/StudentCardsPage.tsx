@@ -67,7 +67,9 @@ export function StudentCardsPage() {
 
   const filtered = students.filter((s) => {
     const term = search.trim().toLowerCase()
-    if (term && !s.full_name.toLowerCase().includes(term) && !s.barcode.toLowerCase().includes(term)) return false
+    const name = s.full_name?.toLowerCase() ?? ''
+    const barcode = s.barcode?.toLowerCase() ?? ''
+    if (term && !name.includes(term) && !barcode.includes(term)) return false
     if (classFilter !== 'all' && s.class_id !== classFilter) return false
     if (statusFilter !== 'all' && s.enrollment_status !== statusFilter) return false
     return true
